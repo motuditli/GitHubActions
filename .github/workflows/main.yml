@@ -12,10 +12,16 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v1
 
     # Runs a single command using the runners shell
-    - name: WarnOfCredentials
+    - name: CheckCredentials
+      id: checkCreds
+      uses: andstor/file-existence-action@v1
       with:
         files: "credentials"
-      run: echo "There are credentials stored. Remove them"
+    
+    -name: CredentialWarning
+      if: steps.checkCreds.outputs.files_exists == 'true'
+      run: echo There are credentials stored. Remove them!
