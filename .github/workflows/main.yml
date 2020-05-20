@@ -22,4 +22,4 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Find
-      run: if [ -e ".credentials" ]; then; echo "Warning, there are credentials included"; return flase; else; return true; fi;
+      run: if [ -e ".credentials" ]; then; echo "Warning, there are credentials included"; return flase; else; echo "Everything is fine"; return true; fi;
