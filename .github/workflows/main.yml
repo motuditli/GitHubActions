@@ -16,4 +16,6 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: WarnOfCredentials
-      run: '(test -f credentials && echo Warning, there are credentials included) echo Everything is fine'
+      with:
+        files: "credentials"
+      run: echo "There are credentials stored. Remove them"
