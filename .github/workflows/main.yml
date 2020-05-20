@@ -22,6 +22,6 @@ jobs:
       with:
         files: "credentials"
     
-    -name: CredentialWarning
+    - name: CredentialWarning
       if: steps.checkCreds.outputs.files_exists == 'true'
       run: echo There are credentials stored. Remove them!
