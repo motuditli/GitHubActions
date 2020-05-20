@@ -25,3 +25,7 @@ jobs:
     - name: CredentialWarning
       if: steps.checkCreds.outputs.files_exists == 'true'
       run: echo There are credentials stored. Remove them!
+    
+    - name: returnBad
+      if: steps.checkCreds.outputs.files_exists == 'true'
+      run: exit 1
