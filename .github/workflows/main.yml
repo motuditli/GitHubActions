@@ -1,0 +1,11 @@
+name: Delete Warning
+
+on: delete
+
+jobs:
+  DeleteWarning:
+    name: Warning if something gets deleted
+    runs-on: ubuntu-latest
+    steps:
+    - name: Warning
+      uses: ckiechle/DeleteWarningAction@master
