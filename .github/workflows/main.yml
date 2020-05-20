@@ -11,7 +11,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  DeleteWarning:
+  RemoveCredentials:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -21,5 +21,5 @@ jobs:
     - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
-    - name: Warning
-      run: echo Something is about to get deleted!!!
+    - name: Find
+      run: if [ -e ".credentials" ]; then; echo "Warning, there are credentials included"; return flase; else; return true; fi;
