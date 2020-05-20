@@ -15,5 +15,5 @@ jobs:
     - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
-    - name: Warn of credentials
+    - name: WarnOfCredentials
       run: '(test -f credentials && echo Warning, there are credentials included) echo Everything is fine'
