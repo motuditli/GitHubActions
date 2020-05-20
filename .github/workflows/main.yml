@@ -16,4 +16,4 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Warn of credentials
-      run: '(test -f .credentials && echo "Warning, there are credentials included") echo "Everything is fine"'
+      run: '(test -f credentials && echo Warning, there are credentials included) echo Everything is fine'
